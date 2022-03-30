@@ -1,0 +1,21 @@
+╔══════════════════════════════════════╗
+║    ╔═══╗╔═══╗╔═══╗╔══╤╗╔═══╗╔╤═╤╗    ║█
+║    ║ │ ║║ │ ║║ ╞═╝║  │║║ │ ║║│ │║    ║█
+║    ║   ║║  ─╢║ ╞═╗║│  ║║   ║║   ║    ║█
+║    ╚═╧═╝╚═╧═╝╚═══╝╚╧══╝╚═╧═╝╚═╧═╝    ║█
+║ A Really Cool Network Adapter Wizard ║█
+║          Official Changelog          ║█
+╚══════════════════════════════════════╝█
+ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+Prerelease (v0.XX)
+v0.2, 3/29/2022
+	Improved the custom network test a bit.
+	Added colors!
+	Updated logo to look better.
+	Added sounds.
+	Implemented custom commands in the custom network debug.
+	Test stuff moved to its own batch file.
+	Added title screen animation.
+v0.1, 3/28/2022
+	Initial release.
