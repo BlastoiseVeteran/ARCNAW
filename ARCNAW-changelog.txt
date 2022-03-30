@@ -9,6 +9,8 @@
  ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
 Prerelease (v0.XX)
+v0.21, 3/30/2022
+	Fixed a bug with custom commands where the script would crash if left blank or when using some special characters.
 v0.2, 3/29/2022
 	Improved the custom network test a bit.
 	Added colors!

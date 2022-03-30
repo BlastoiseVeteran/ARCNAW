@@ -39,7 +39,7 @@ echo บ [1] Network Reset                    บÛ
 echo บ [2] Network Reset (Verbose)          บÛ
 echo บ [3] Custom Network Debug             บÛ
 echo บ [4] Info                             บÛ
-echo บ [5] Exit                        v0.2 บÛ
+echo บ [5] Exit                       v0.21 บÛ
 echo ศออออออออออออออออออออออออออออออออออออออผÛ
 echo  ฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
 color FF
@@ -54,7 +54,7 @@ goto menu
 :menu
 cls
 color 17
-title ARCNAW, A Really Cool Network Adapter Wizard - v0.2
+title ARCNAW, A Really Cool Network Adapter Wizard - v0.21
 echo ษออออออออออออออออออออออออออออออออออออออป
 echo บ    [97mษอออปษอออปษอออปษออัปษอออปษัอัป[37m    บÛ
 echo บ    [97mบ ณ บบ ณ บบ ฦอผบ  ณบบ ณ บบณ ณบ[37m    บÛ
@@ -67,7 +67,7 @@ echo บ [93m[1] Network Reset[37m                    บÛ
 echo บ [93m[2] Network Reset (Verbose)[37m          บÛ
 echo บ [93m[3] Custom Network Debug[37m             บÛ
 echo บ [93m[4] Info[37m                             บÛ
-echo บ [93m[5] Exit[37m                        [96mv0.2[37m บÛ
+echo บ [93m[5] Exit[37m                       [96mv0.21[37m บÛ
 echo ศออออออออออออออออออออออออออออออออออออออผÛ
 echo  ฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
 :menuchoice
@@ -95,7 +95,7 @@ echo บ any other reason. Only reason I made it look all บÛ
 echo บ fancy-schmancy is because I was bored in school. บÛ
 echo บ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ บÛ
 echo บ ARCNAW created by BlastoiseVeteran.              บÛ
-echo บ v0.2, made 3/29/2022                             บÛ
+echo บ v0.21, made 3/30/2022                            บÛ
 echo บ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ บÛ
 echo บ [93mPress any key to go back to the menu.[37m            บÛ
 echo ศออออออออออออออออออออออออออออออออออออออออออออออออออผÛ
@@ -328,6 +328,7 @@ if '%cstmcmd%'=='11' goto custom
 echo Please choose a valid option.
 goto cstmcmdchoice
 
+rem /* if theres a nicer way of doing this part, please lmk */
 :cstmvars
 %cmd% /?
 echo What would you like to add to the command? (Leave blank for nothing.)
@@ -335,9 +336,9 @@ set "var="
 goto setvar
 :setvar
 set /p var=
-if not "%var:&=%"=="%var%" (echo I think I see what you were trying to do. Try it without an ampersand this time! & goto setvar) else (echo [37mRunning: [97m%cmd% %var%[37m & %cmd% %var% & goto cstmdone)
-if '%var%'=='' echo [37mRunning: [97m%cmd%[37m & %cmd% & goto cstmdone
-
+if defined var (goto setvar2) else (echo [37mRunning: [97m%cmd%[37m & %cmd% & goto cstmdone)
+:setvar2
+if not "%var:&=%"=="%var%" (echo I think I see what you were trying to do. Try it without an ampersand this time! & goto setvar) else (echo [37mRunning: [97m%cmd%%var%[37m & %cmd%%var% & goto cstmdone)
 
 :restart
 echo Are you sure you would like to restart immediately?
